@@ -17,7 +17,11 @@ defmodule FtatWeb.Router do
   scope "/", FtatWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", DataHomeLive, :index
+    live "/dataset", DatasetLive, :index
+    live "/names", NamesLive, :index
+    live "/facilities", FacilitiesLive, :index
+    live "/permits", PermitsLive, :index
   end
 
   # Other scopes may use custom stacks.
