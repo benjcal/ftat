@@ -1,4 +1,4 @@
-defmodule Ftat.MobileFoodFacilityPermits.MobileFoodFacilityPermit do
+defmodule Ftat.MobileFoods.FacilityPermit do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -18,8 +18,8 @@ defmodule Ftat.MobileFoodFacilityPermits.MobileFoodFacilityPermit do
   end
 
   @doc false
-  def changeset(mobile_food_facility_permit, attrs) do
-    mobile_food_facility_permit
+  def changeset(facility_permit, attrs) do
+    facility_permit
     |> cast(attrs, [
       :applicant,
       :address,
@@ -27,16 +27,11 @@ defmodule Ftat.MobileFoodFacilityPermits.MobileFoodFacilityPermit do
       :blocklot,
       :permit,
       :permit_status,
+      :food_items,
       :permit_approved_date,
       :permit_expiration_date,
-      :food_items,
       :prior_permit
     ])
-    |> validate_required([
-      :applicant,
-      :facility_type,
-      :permit,
-      :permit_status
-    ])
+    |> validate_required([:applicant, :facility_type, :permit, :permit_status])
   end
 end

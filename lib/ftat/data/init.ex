@@ -1,5 +1,5 @@
 defmodule Ftat.Data.Init do
-  import Ftat.MobileFoodFacilityPermits
+  import Ftat.MobileFoods
 
   @mobile_food_facility_permits_from_csv "data/Mobile_Food_Facility_Permit_20241007.csv"
 
@@ -27,7 +27,7 @@ defmodule Ftat.Data.Init do
         prior_permit: entry["PriorPermit"]
       }
     end)
-    |> Enum.map(&create_mobile_food_facility_permit(&1))
+    |> Enum.map(&create_facility_permit(&1))
   end
 
   defp parse_csv_date(str) do

@@ -1,14 +1,14 @@
-defmodule Ftat.MobileFoodFacilityPermitsFixtures do
+defmodule Ftat.MobileFoodsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Ftat.MobileFoodFacilityPermits` context.
+  entities via the `Ftat.MobileFoods` context.
   """
 
   @doc """
-  Generate a mobile_food_facility_permit.
+  Generate a facility_permit.
   """
-  def mobile_food_facility_permit_fixture(attrs \\ %{}) do
-    {:ok, mobile_food_facility_permit} =
+  def facility_permit_fixture(attrs \\ %{}) do
+    {:ok, facility_permit} =
       attrs
       |> Enum.into(%{
         address: "some address",
@@ -22,8 +22,8 @@ defmodule Ftat.MobileFoodFacilityPermitsFixtures do
         permit_status: "some permit_status",
         prior_permit: true
       })
-      |> Ftat.MobileFoodFacilityPermits.create_mobile_food_facility_permit()
+      |> Ftat.MobileFoods.create_facility_permit()
 
-    mobile_food_facility_permit
+    facility_permit
   end
 end
