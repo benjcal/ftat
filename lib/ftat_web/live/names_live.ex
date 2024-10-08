@@ -4,7 +4,7 @@ defmodule FtatWeb.NamesLive do
   @impl true
   def render(assigns) do
     ~H"""
-    names
+    (Coming Soon...)
     """
   end
 

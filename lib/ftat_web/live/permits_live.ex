@@ -4,7 +4,7 @@ defmodule FtatWeb.PermitsLive do
   @impl true
   def render(assigns) do
     ~H"""
-    permits
+    (Coming Soon...)
     """
   end
 
