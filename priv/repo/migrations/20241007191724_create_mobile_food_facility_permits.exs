@@ -3,11 +3,11 @@ defmodule Ftat.Repo.Migrations.CreateMobileFoodFacilityPermits do
 
   def change do
     create table(:mobile_food_facility_permits) do
+      add :permit, :string
       add :applicant, :string
       add :address, :string
       add :facility_type, :string
       add :blocklot, :string
-      add :permit, :string
       add :permit_status, :string
       add :food_items, :string, size: 4092
       add :permit_approved_date, :date

@@ -54,4 +54,47 @@ defmodule Ftat.MobileFoods do
     |> FacilityPermit.changeset(attrs)
     |> Repo.insert()
   end
+
+  def get_facility_types_count() do
+    query =
+      from fp in FacilityPermit,
+        group_by: :facility_type,
+        select: {fp.facility_type, count(fp.id)}
+
+    query
+    |> Repo.all()
+  end
+
+  def get_facility_permit_status_count do
+    query =
+      from fp in FacilityPermit,
+        group_by: :permit_status,
+        select: {fp.permit_status, count(fp.id)}
+
+    query
+    |> Repo.all()
+  end
+
+  def get_facility_permit_status_count_by_type(type) do
+    query =
+      from fp in FacilityPermit,
+        group_by: :permit_status,
+        select: {fp.permit_status, count(fp.id)},
+        where: fp.facility_type == ^type
+
+    query
+    |> Repo.all()
+  end
+
+  def get_facility_permit_new_by_type(type) do
+    query =
+      from fp in FacilityPermit,
+        select: count(fp.id),
+        where: fp.facility_type == ^type,
+        where: fp.prior_permit == false,
+        where: fp.permit_status == "APPROVED"
+
+    query
+    |> Repo.all()
+  end
 end
