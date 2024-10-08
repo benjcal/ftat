@@ -51,8 +51,6 @@ COPY lib lib
 
 COPY assets assets
 
-COPY data data
-
 # compile assets
 RUN mix assets.deploy
 
