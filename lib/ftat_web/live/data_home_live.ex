@@ -4,7 +4,7 @@ defmodule FtatWeb.DataHomeLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <div class="text-4xl font-bold">Welcome to F.T.A.T (Food Truck Analysis Toolkit)</div>
+    <div class="text-4xl font-bold text-center mb-12">Welcome to F.T.A.T (Food Truck Analysis Toolkit)</div>
     <div class="grid grid-cols-2 gap-8 max-w-2xl mx-auto">
       <.link href="/dataset">
         <div class="flex justify-center items-center h-24 border rounded-xl hover:bg-gray-100 gap-2">
